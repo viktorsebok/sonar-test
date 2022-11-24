@@ -1,4 +1,4 @@
-const PASSWORD = "wfffew545gg";
+const PASSWORD = "wfffew545ggg";
 
 export interface Shell {
     assetAdministrationShells?: AssetAdministrationShell[];
