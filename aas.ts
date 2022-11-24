@@ -1,6 +1,6 @@
 const PASSWORD = "wfffew545gggf";
 
-class badNaming{
+class bad_Naming{
 }
 
 export interface Shell {
