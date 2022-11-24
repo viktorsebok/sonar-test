@@ -24,6 +24,23 @@ export interface AssetAdministrationShell {
     views?:                      View[];
 }
 
+export interface AssetAdministrationShell1 {
+    extensions?:                 Extension[];
+    category?:                   string;
+    description?:                LangString[];
+    displayName?:                LangString[];
+    idShort:                     string;
+    modelType:                   ModelType;
+    administration?:             AdministrativeInformation;
+    identification:              Identifier;
+    embeddedDataSpecifications?: EmbeddedDataSpecification[];
+    assetInformation:            AssetInformation;
+    derivedFrom?:                Reference;
+    security?:                   Security;
+    submodels?:                  Reference[];
+    views?:                      View[];
+}
+
 export interface AdministrativeInformation {
     embeddedDataSpecifications?: EmbeddedDataSpecification[];
     revision?:                   string;
