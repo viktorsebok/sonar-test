@@ -1,3 +1,5 @@
+const PASSWORD = "wfffew545";
+
 export interface Shell {
     assetAdministrationShells?: AssetAdministrationShell[];
     assets?:                    Asset[];
