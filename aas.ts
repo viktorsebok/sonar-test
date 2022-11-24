@@ -1,6 +1,7 @@
 const PASSWORD = "wfffew545gggf";
 
 class bad_Naming{
+    var_name: string;
 }
 
 export interface Shell {
