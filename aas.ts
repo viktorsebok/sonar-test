@@ -1,5 +1,8 @@
 const PASSWORD = "wfffew545gggf";
 
+class badNaming{
+}
+
 export interface Shell {
     assetAdministrationShells?: AssetAdministrationShell[];
     assets?:                    Asset[];
