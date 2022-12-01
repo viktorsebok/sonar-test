@@ -8,6 +8,7 @@ export class test_class{
         }
     }
 }
+
 export class test_class{
     s: string;
 
