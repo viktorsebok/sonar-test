@@ -25,4 +25,4 @@ jobs:
       - name: Unzip the Pipeline Scanner
         run: unzip pipeline-scan-LATEST.zip
       - name: Run Pipeline Scanner
-        run: java -Dpipeline.debug=true -jar pipeline-scan.jar --veracode_api_id "307973e4f088c3ac90a744089aa866b7" --veracode_api_key "cd575248189cd814ef5f594d1b01fda5e9feea25742830092f9cef142c2d60c552ffedd757131643d42ea9da0ad578430c0c9c54f989e1408c6d2228dad1e0ab" --file "testClass.ts" --fail_on_severity="Very High, High"
+        run: java -Dpipeline.debug=true -jar pipeline-scan.jar --veracode_api_id "${{secrets.VERACODE_API_ID}}" --veracode_api_key "${{secrets.VERACODE_API_KEY}}" --file "app.zip" --fail_on_severity="Very High, High"
