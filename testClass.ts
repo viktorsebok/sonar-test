@@ -1,3 +1,4 @@
+const password = "asdasdasD";
 export class test_class{
     s: string;
 
