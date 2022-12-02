@@ -26,3 +26,13 @@ jobs:
         run: unzip pipeline-scan-LATEST.zip
       - name: Run Pipeline Scanner
         run: java -Dpipeline.debug=true -jar pipeline-scan.jar --veracode_api_id "${{secrets.VERACODE_API_ID}}" --veracode_api_key "${{secrets.VERACODE_API_KEY}}" --file "veracode.zip" --fail_on_severity="Very High, High"
+
+      - name: Convert pipeline scan output to SARIF format 
+        id: convert
+        uses: ./
+        with:
+          pipeline-results-json: results.json
+      - uses: github/codeql-action/upload-sarif@v2
+        with:
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: veracode-results.sarif
