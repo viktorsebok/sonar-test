@@ -1,5 +1,5 @@
 name: Veracode Static Pipeline Analysis Demo
-on: workflow_dispatch
+on: push
 
 jobs:
   build:
