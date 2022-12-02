@@ -1,0 +1,33 @@
+name: Veracode Static Pipeline Analysis Demo
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: build
+        run: gradle clean build
+  pipeline-scan:
+    runs-on: ubuntu-latest
+    steps:
+    
+      - name: Check out main branch
+        uses: actions/checkout@v2
+        
+      - uses: vimtor/action-zip@v1
+        with:
+          files: testClass.ts
+          dest: app.zip
+          
+      - name: Set up JDK 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Download the Pipeline Scanner
+        uses: wei/curl@master
+        with:
+          args: -O https://downloads.veracode.com/securityscan/pipeline-scan-LATEST.zip
+      - name: Unzip the Pipeline Scanner
+        run: unzip pipeline-scan-LATEST.zip
+      - name: Run Pipeline Scanner
+        run: java -Dpipeline.debug=true -jar pipeline-scan.jar --veracode_api_id "307973e4f088c3ac90a744089aa866b7" --veracode_api_key "cd575248189cd814ef5f594d1b01fda5e9feea25742830092f9cef142c2d60c552ffedd757131643d42ea9da0ad578430c0c9c54f989e1408c6d2228dad1e0ab" --file "app.zip" --fail_on_severity="Very High, High"
