@@ -1,4 +1,6 @@
 const password = "asdasdasD";
+const username = "asddd";
+
 export class test_class{
     s: string;
 
