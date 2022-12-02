@@ -25,7 +25,7 @@ jobs:
           vkey: 'cd575248189cd814ef5f594d1b01fda5e9feea25742830092f9cef142c2d60c552ffedd757131643d42ea9da0ad578430c0c9c54f989e1408c6d2228dad1e0ab'
           createsandbox: 'false'
           sandboxname: 'Test_Viktor'
-#          scantimeout: 0
+          scantimeout: 5
 #          exclude: '*.js'
 #          include: '*.war'
           criticality: 'VeryHigh'
