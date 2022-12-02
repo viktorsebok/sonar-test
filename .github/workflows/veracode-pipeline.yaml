@@ -2,11 +2,6 @@ name: Veracode Static Pipeline Analysis Demo
 on: push
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: build
-        run: gradle clean build
   pipeline-scan:
     runs-on: ubuntu-latest
     steps:
